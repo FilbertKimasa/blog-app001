@@ -6,5 +6,10 @@ class User < ApplicationRecord
   
     validates :name, presence: true
     # validates :photo, presence: true # Assuming photo is required
+
+    # Returns the 3 most recent posts for a given user
+    def recent_posts
+        posts.order(created_at: :desc).limit(3)
+    end
   end
   
