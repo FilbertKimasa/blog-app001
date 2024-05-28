@@ -1,15 +1,14 @@
 # app/models/user.rb
 class User < ApplicationRecord
-    has_many :posts, foreign_key: :author_id, dependent: :destroy
-    has_many :comments, dependent: :destroy
-    has_many :likes, dependent: :destroy
-  
-    validates :name, presence: true
-    # validates :photo, presence: true # Assuming photo is required
+  has_many :posts, foreign_key: :author_id, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
-    # Returns the 3 most recent posts for a given user
-    def recent_posts
-        posts.order(created_at: :desc).limit(3)
-    end
+  validates :name, presence: true
+  # validates :photo, presence: true # Assuming photo is required
+
+  # Returns the 3 most recent posts for a given user
+  def recent_posts
+    posts.order(created_at: :desc).limit(3)
   end
-  
+end
