@@ -1,8 +1,26 @@
-.main-container{
-    display: grid;
-    grid-template-columns: auto auto;
+.user-card{
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    border-bottom: 2px solid black;
 }
 
-.user-container{
-    
+.profile-picture{
+    width: 250px;
+    height: 250px;
+    padding: 2%;
+}
+
+.user-details{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    font-size: 30px;
+    gap: 50px;
+    width: max-content;
+}
+
+.number-of-posts{
+    padding-top: 15%;
+    bottom: 2px; right: 16px; font-size: 18px;
 }
