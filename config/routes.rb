@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   get "/users/:id", to: "users#show"
+  get '/users/:user_id/posts', to: 'posts#index'
+  get '/users/:user_id/posts/:id', to: 'posts#show'
 
   # get '/users', to: 'users#index', as: 'users'
   # get '/users/:id', to: 'users#posts', as: 'user_posts'
