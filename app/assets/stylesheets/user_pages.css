@@ -1,5 +1,5 @@
 .users-list{
-   margin-left: 150px;
+   margin-left: 40px;
 }
 .user-section{
     display: flex;
@@ -8,12 +8,13 @@
 }
 .user-card{
     display: grid;
-    grid-template-columns: 43% 57%;
+    grid-template-columns: 35% 65%;
     height: 12.625rem;
     padding: 2rem 2.688rem 1.625rem 2.688rem;
     border-radius: 4px;
     border: solid 1px #e8e8e8;
     background-color: #fff;
+    margin-top: 2%;
 }
 
 .profile-picture{
@@ -34,6 +35,8 @@
 .number-of-posts{
     padding-top: 20%;
     bottom: 2px; right: 16px; font-size: 18px;
+    letter-spacing: 0.3rem;
+    font-weight: bold;
 }
 
 .unordered-list{
