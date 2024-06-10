@@ -1,14 +1,25 @@
-<h1 class="users-list">Users List</h1>
-<ul>
-  <li class="user-card">
+<div class="card user-card">
     <img src = "<%= @user.photo %>" alt="user" class="profile-picture">
     <div class="user-details">
           <h2><%= @user.name %></h2>
           <p class="number-of-posts bottomright">Number of posts:<%= @user.posts_counter%></>
     </div>
-  </li>
+</div>
 
 <div>
 <h3>Bio</h3>
 <p><%= @user.bio %></p>
 </div>
+
+<% @posts.each_with_index do |post, index| %>
+    <div class="card">
+        <h2>Post #<%= index + 1 %></h2>
+        <div class="user-card user-post">
+               <p><%= post.text %></p>
+               <ul class="unordered-list likes-comments">
+                    <li>Likes: <%= post.likes.count %> </li>
+                   <li>Comments: <%= post.comments.count %> &#44; </li>
+               </ul>
+        </div>
+    </div>
+<% end %>
