@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'users/show'
   get 'posts/index'
   get 'posts/show'
+  resources :users, only: [:show, :index] do
+    resources :posts, only: [:index]
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -10,7 +13,7 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  get "/users/:id", to: "users#show"
+  # get "/users/:id", to: "users#show"
   get '/users/:user_id/posts', to: 'posts#index'
   get '/users/:user_id/posts/:id', to: 'posts#show'
 

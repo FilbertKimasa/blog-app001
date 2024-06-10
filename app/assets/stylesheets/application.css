@@ -19,3 +19,13 @@
      background-color:#f5f6fa;
      padding: 0 6.5rem 0.938rem 6.5rem;
  }
+
+ a {
+    text-decoration: none; 
+    color: black;         
+}
+
+a:hover {
+    color: gray; 
+    opacity: 0.7;      
+}

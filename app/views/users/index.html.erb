@@ -5,7 +5,9 @@
     <img src = "<%= user.photo %>" alt="user" class="profile-picture">
     <div class="user-details">
           <h2><%= user.name %></h2>
-          <p class="number-of-posts bottomright">Number of posts:<%= user.posts_counter%></>
+          <p class="number-of-posts bottomright">
+          <%= link_to "Number of posts: #{user.posts_counter}", user_path(user) %>
+        </p>
     </div>
   </li>
 <% end %>
