@@ -8,7 +8,15 @@ class User < ApplicationRecord
   # validates :photo, presence: true # Assuming photo is required
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  # Returns the 3 most recent posts for a given user
+  def index
+    User.all
+  end
+
+  def posts
+    @user = User.find(params[:id])
+    @posts = @user.posts
+  end
+
   def recent_posts
     posts.order(created_at: :desc).limit(3)
   end

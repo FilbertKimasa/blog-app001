@@ -14,7 +14,8 @@
  *= require_self
  */
 
- body{
+ .main-body{
      padding: 1%;
-     /* background-color: red; */
+     background-color:#f5f6fa;
+     padding: 0 6.5rem 0.938rem 6.5rem;
  }
