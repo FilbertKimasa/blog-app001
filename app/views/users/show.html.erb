@@ -11,7 +11,7 @@
 <p><%= @user.bio %></p>
 </div>
 
-<% @posts.each_with_index do |post, index| %>
+<% @recent_posts.each_with_index do |post, index| %>
     <div class="card">
         <h2>Post #<%= index + 1 %></h2>
         <div class="user-card user-post">
@@ -23,3 +23,5 @@
         </div>
     </div>
 <% end %>
+
+<%= link_to 'See All Posts', posts_user_path(@user), class: 'btn btn-primary' %>

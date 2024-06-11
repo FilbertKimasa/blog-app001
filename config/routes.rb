@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'posts/show'
   resources :users, only: [:show, :index] do
     resources :posts, only: [:index]
+
+    member do
+      get :posts # This creates a route for users/:id/posts
+    end
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
