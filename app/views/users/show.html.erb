@@ -5,17 +5,6 @@
 <p><%= @user.bio %></p>
 </div>
 
-<% @recent_posts.each_with_index do |post, index| %>
-    <div class="card">
-        <h2>Post #<%= index + 1 %></h2>
-        <div class="user-card user-post">
-               <p><%= post.text %></p>
-               <ul class="unordered-list likes-comments">
-                    <li>Likes: <%= post.likes.count %> </li>
-                   <li>Comments: <%= post.comments.count %> &#44; </li>
-               </ul>
-        </div>
-    </div>
-<% end %>
+<%= render 'posts/posts_summary', post: @post %>
 
 <%= link_to 'See All Posts', posts_user_path(@user), class: 'btn' %>
