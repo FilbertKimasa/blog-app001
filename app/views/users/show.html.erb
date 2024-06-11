@@ -1,10 +1,24 @@
 <%= render 'user_profile', user: @user %>
 
 <div>
-<h3>Bio</h3>
-<p><%= @user.bio %></p>
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
 </div>
 
-<%= render 'posts/posts_summary', post: @post %>
+<% @recent_posts.each_with_index do |post, index| %>
+    <div class="card">
+        <h2>Post #<%= index + 1 %></h2>
+        <div class="user-card user-post">
+               <p><%= post.text %></p>
+               <ul class="unordered-list likes-comments">
+                    <li>Likes: <%= post.likes.count %> </li>
+                   <li>Comments: <%= post.comments.count %> &#44; </li>
+               </ul>
+        </div>
+    </div>
+<% end %>
+<ul>
+
+</ul>
 
 <%= link_to 'See All Posts', posts_user_path(@user), class: 'btn' %>
