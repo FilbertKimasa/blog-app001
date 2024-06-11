@@ -1,4 +1,19 @@
-.see-posts-btn{
-    width: 100px;
-    align-self: center;
+.btn{
+    /* padding: 10px 50px 10px 50px; */
+    display: block; /* Make the button block level to take full width */
+    margin: 20px auto; /* Space above the button */;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    width: 200px;
 }
+
+.btn:hover {
+    background-color: #0056b3;
+  }
