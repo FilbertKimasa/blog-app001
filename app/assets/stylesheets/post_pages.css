@@ -17,3 +17,22 @@
 .btn:hover {
     background-color: #0056b3;
   }
+
+.comments-list{
+    background-color:#f1f1f1;
+    min-height: fit-content;
+    max-height: 90px;
+    overflow-y: scroll;
+    border-top: 1px solid #babfc5;
+    padding: 10px;
+}
+
+.comments-list li{
+    border-bottom: 1px solid #babfc5;
+    padding: 2px 0;
+}
+
+.post-link:hover {
+    border: 10px solid red !important;
+  }
+  

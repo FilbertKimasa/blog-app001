@@ -1,16 +1,27 @@
 <%= render 'users/user_profile', user: @user %>
 
+<h1><%= @user.name %>'s Posts</h1>
+
 <% @posts.each_with_index do |post, index| %>
-    <div class="card">
-        <h2>Post #<%= index + 1 %></h2>
-        <div class="user-card user-post">
-               <p><%= post.text %></p>
-               <ul class="unordered-list likes-comments">
-                    <li>Likes: <%= post.likes.count %> </li>
-                   <li>Comments: <%= post.comments.count %> &#44; </li>
-               </ul>
-        </div>
-    </div>
+  <div class="card">
+    <h2>Post #<%= index + 1 %></h2>
+    <%= link_to user_post_path(@user, post), class: "post-link" do %>
+      <div class="user-card user-post">
+        <p><%= post.text %></p>
+        <ul class="unordered-list likes-comments">
+          <li>Likes: <%= post.likes.count %> </li>
+          <li>Comments: <%= post.comments.count %> </li>
+        </ul>
+      </div>
+    <% end %>
+    <ul class="unordered-list comments-list">
+      <% post.comments.each do |comment| %>
+        <li><%= comment.user.name %>: <%= comment.text %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
-    
-<button class ="see-posts-btn">See all posts</button>
+
+<div class="pagination-container">
+  <%= paginate @posts %>
+</div>
