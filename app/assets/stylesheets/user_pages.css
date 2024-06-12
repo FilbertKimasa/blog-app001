@@ -1,29 +1,25 @@
 .users-list{
    margin-left: 40px;
 }
-.user-section{
-    display: flex;
-    flex-direction: column;
-    padding: 0% 10% 0% 10%;
-}
 
 .card{
     min-height: fit-content;
     border-radius: 4px;
     border: solid 1px #e8e8e8;
     background-color: #fff;
-    margin-top: 2%;
-    padding: 2rem 2.688rem 1.625rem 2.688rem;
+    margin-top: 1%;
+    padding: 1rem 1.688rem 1rem 1.688rem;
 }
 
 .user-card{
     display: grid;
-    grid-template-columns: 35% 65%;  
+    grid-template-columns: 20% 80%;  
 }
 
 .profile-picture{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+    border-radius: 2%;
 }
 
 .user-details{
@@ -31,7 +27,6 @@
     flex-direction: row;
     position: relative;
     font-size: 30px;
-    margin-top: 10px;
     gap: 150px;
     width: max-content;
 }
@@ -45,6 +40,8 @@
 
 .unordered-list{
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .likes-comments{

@@ -1,7 +1,6 @@
 .btn{
-    /* padding: 10px 50px 10px 50px; */
-    display: block; /* Make the button block level to take full width */
-    margin: 20px auto; /* Space above the button */;
+    display: block;
+    margin: 20px auto;
     padding: 10px 20px;
     font-size: 16px;
     color: white;
@@ -20,19 +19,22 @@
 
 .comments-list{
     background-color:#f1f1f1;
-    min-height: fit-content;
-    max-height: 90px;
+    /* min-height: 0; */
+    /* max-height: 50px; */
+    height: 50px;
     overflow-y: scroll;
     border-top: 1px solid #babfc5;
-    padding: 10px;
+    
 }
 
 .comments-list li{
     border-bottom: 1px solid #babfc5;
-    padding: 2px 0;
 }
 
 .post-link:hover {
     border: 10px solid red !important;
   }
   
+  .post-content{
+      display: inline-block;
+  }

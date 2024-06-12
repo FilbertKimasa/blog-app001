@@ -1,27 +1,26 @@
 <%= render 'users/user_profile', user: @user %>
 
-<h1><%= @user.name %>'s Posts</h1>
-
+<% current_page = (params[:page] || 1).to_i %>
 <% @posts.each_with_index do |post, index| %>
-  <div class="card">
-    <h2>Post #<%= index + 1 %></h2>
-    <%= link_to user_post_path(@user, post), class: "post-link" do %>
-      <div class="user-card user-post">
+  <% adjusted_index = (current_page - 1) * @posts.limit_value + index + 1 %>
+  <%= link_to user_post_path(@user, post) do %>
+    <div class="card">
+      <h3>Post #<%= adjusted_index %></h3>
+      <div>
         <p><%= post.text %></p>
         <ul class="unordered-list likes-comments">
-          <li>Likes: <%= post.likes.count %> </li>
-          <li>Comments: <%= post.comments.count %> </li>
+          <li>Likes: <%= post.likes.count %></li>
+          <li>Comments: <%= post.comments.count %></li>
         </ul>
       </div>
-    <% end %>
-    <ul class="unordered-list comments-list">
-      <% post.comments.each do |comment| %>
-        <li><%= comment.user.name %>: <%= comment.text %></li>
-      <% end %>
-    </ul>
-  </div>
+
+      <ul class="unordered-list comments-list">
+        <% post.comments.each do |comment| %>
+          <li><%= comment.user.name %>: <%= comment.text %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 <% end %>
 
-<div class="pagination-container">
-  <%= paginate @posts %>
-</div>
+<button class="btn paginate"><%= paginate @posts %></button>
