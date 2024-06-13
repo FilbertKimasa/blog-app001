@@ -38,10 +38,14 @@
     font-weight: bold;
 }
 
-.unordered-list{
+.unordered-list, h2{
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.user-name{
+    padding-top: 10px;
 }
 
 .likes-comments{

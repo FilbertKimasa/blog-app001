@@ -19,8 +19,6 @@
 
 .comments-list{
     background-color:#f1f1f1;
-    /* min-height: 0; */
-    /* max-height: 50px; */
     height: 50px;
     overflow-y: scroll;
     border-top: 1px solid #babfc5;
@@ -37,4 +35,18 @@
   
   .post-content{
       display: inline-block;
+  }
+
+  .post-header{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .post-header{
+      justify-content: space-between;
+  }
+
+  .post-header{
+    padding:20px 0;
+    border-bottom: 1px solid #ecf1f8;
   }

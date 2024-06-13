@@ -1,20 +1,15 @@
 <section class="user-section">
-<div class="post-header">
-    <h3>Post # <%= @post.id %> by: <%= @user.name%></h3>
-    <ul class="unordered-list likes-comments">
-        <li>Likes: y </li>
-        <li>Comments: x &#44; </li>
-    </ul>
-</div>
-
     <div class="card">
-      <h3>Post # <%= @post.id %></h3>
+
       <div>
+        <div class="post-header">
+          <h2>Post # <%= @post.id %> by: <%= @user.name%></h2>
+          <ul class="unordered-list likes-comments">
+            <li>Likes: <%= @post.likes.count %></li>
+            <li>Comments: <%= @post.comments.count %></li>
+          </ul>
+        </div>
         <p><%= @post.text %></p>
-        <ul class="unordered-list likes-comments">
-          <li>Likes: <%= @post.likes.count %></li>
-          <li>Comments: <%= @post.comments.count %></li>
-        </ul>
       </div>
 
       <ul class="unordered-list comments-list">
