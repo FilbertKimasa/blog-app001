@@ -12,12 +12,6 @@ class User < ApplicationRecord
     User.all
   end
 
-  def posts
-    # Assuming posts is already an association, this method can simply return it.
-    # If you have any custom logic, you can add it here.
-    super
-  end
-
   def recent_posts
     posts.order(created_at: :desc).limit(3)
   end
