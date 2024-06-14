@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   get '/', to: "users#index"
-  get 'users/show'
-  get 'posts/index'
-  get 'posts/show'
   resources :users, only: [:show, :index] do
     resources :posts, only: [:show, :index]
 
@@ -15,10 +12,10 @@ Rails.application.routes.draw do
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  # get "up" => "rails/health#show", as: :rails_health_check
 
   # get "/users/:id", to: "users#show"
-  get '/users/:user_id/posts', to: 'posts#index'
+  # get '/users/:user_id/posts', to: 'posts#index'
   # get '/users/:user_id/posts/:post_id', to: 'posts#show'
 
   # get '/users', to: 'users#index', as: 'users'
