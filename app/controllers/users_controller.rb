@@ -8,5 +8,4 @@ class UsersController < ApplicationController
   def show
     @recent_posts = @user.posts.includes(:likes, :comments).limit(3)
   end
-
 end

@@ -8,5 +8,4 @@ class PostsController < ApplicationController
   def show
     @post = @user.posts.includes(:comments, :likes).where(id: params[:id]).first
   end
-
 end
