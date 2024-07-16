@@ -27,7 +27,7 @@ development:
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
   # the same name as the operating system user running Rails.
-  username: postgres
+  username: codecraft
 
   # The password associated with the PostgreSQL role (username).
   password: Admin
@@ -56,7 +56,7 @@ development:
 test:
   <<: *default
   database: blog_app001_test
-  username: postgres
+  username: codecraft
   password: Admin
   host: localhost
   port: 5432
@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: blog_app001_production
-  username: blog_app001
+  username: codecraft
   password: <%= ENV["BLOG_APP001_DATABASE_PASSWORD"] %>
