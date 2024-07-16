@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/', to: "users#index"
   resources :users, only: [:show, :index] do
-    resources :posts, only: [:show, :index]
+    resources :posts, only: [:show, :index, :new, :create]
 
     member do
       get :posts # This creates a route for users/:id/posts
