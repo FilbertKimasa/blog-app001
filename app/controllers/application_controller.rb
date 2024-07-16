@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
   def render404
     render file: "#{Rails.root}/public/404.html", status: :not_found
   end
+
+  def current_user
+    @current_user ||= User.first
+  end
 end
