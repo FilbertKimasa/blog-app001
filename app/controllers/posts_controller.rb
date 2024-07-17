@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   #before_action :set_user
   before_action :set_user, only: [:index, :show, :new, :create]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :like]
 
   def index
     @posts = @user.posts.order(created_at: :asc).includes(:comments, :likes).page(params[:page]).per(2)

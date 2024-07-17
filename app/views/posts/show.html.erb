@@ -5,8 +5,8 @@
         <div class="post-header">
           <h2>Post # <%= @post.id %> by: <%= @user.name%></h2>
           <ul class="unordered-list likes-comments">
-            <li>Likes: <%= @post.likes.count %></li>
-            <li>Comments: <%= @post.comments.count %></li>
+            <li>Likes: <%= @post.likes.count %><i class="material-icons">thumb_up</i></li>
+            <li>Comments: <%= @post.comments.count %><i class="material-icons">comments</i></li>
           </ul>
         </div>
         <p><%= @post.text %></p>
